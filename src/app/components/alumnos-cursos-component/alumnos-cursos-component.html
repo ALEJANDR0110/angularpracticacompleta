@@ -1,0 +1,24 @@
+<h1>Alumnos por Curso {{idCurso}}</h1>
+
+@if (listaAlumnos) {
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Imagen</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (alumno of listaAlumnos; track alumno) {
+                <tr>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellidos}}</td>
+                    <td><img src="{{alumno.imagen}}" alt=""></td>
+                    <td>{{alumno.activo}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,31 @@
+<h1>Nuevo Alumno</h1>
+
+<form #formNuevo="ngForm">
+    <label>Nombre: </label>
+    <input type="text" name="cajanombre" #cajanombre 
+    class="form-control"/>
+    <label>Apellidos: </label>
+    <input type="text" name="cajaapellidos" #cajaapellidos
+    class="form-control"/>
+    <label>Imagen: </label>
+    <input type="text" name="cajaimagen" #cajaimagen 
+    class="form-control"/>
+    <label>Activo: </label>
+    <select name="selectactivo" #selectactivo>
+        <option value="0">Inactivo</option>
+        <option value="1">Activo</option>
+    </select>
+    <label>ID Curso: </label>
+    <select name="selectcurso" #selectcurso>
+        @for (curso of listaCursos; track curso) {
+            <option value="{{curso}}">{{curso}}</option>
+        }
+    </select>
+    <button class="btn btn-warning" (click)="crearAlumno()">
+        Crear
+    </button>
+</form>
+
+@if (mensaje) {
+    <h1>{{mensaje}}</h1>
+}
